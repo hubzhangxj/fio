@@ -1,0 +1,13 @@
+#install fio
+- name: mkdir /tmp/sdb/
+  shell: mkdir -p /tmp/sdb/
+
+- name: copy file
+  copy: src=fio.tar.gz dest=/tmp/fio.tar.gz mode=0777
+
+- name: tar file
+  shell: cd /tmp && tar xvf fio.tar.gz && rm -rf fio.tar.gz
+
+- name: run install
+  shell: "cd /tmp/fio && ./install.sh"
+
