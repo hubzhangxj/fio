@@ -1,2 +1,11 @@
 ---
 # vars file for fio
+fio_packages:
+  - gcc
+  - gcc-c++
+
+
+
+
+
+

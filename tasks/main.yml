@@ -1,3 +1,12 @@
+# tasks file for fio 
+- name: Install fio packages
+  yum:
+    name: "{{ item }}" 
+    state: present
+    update_cache: yes
+  with_items:
+    - "{{ fio_packages }}"
+  when: ansible_os_family == "RedHat"
 #install fio
 - name: mkdir /tmp/sdb/
   shell: mkdir -p /tmp/sdb/
